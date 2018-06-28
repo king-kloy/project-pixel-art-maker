@@ -1,33 +1,36 @@
 // Select color input
-var color;
+let color;
 
 // Select size input
-var height, width;
+let height, width;
 
 // When size is submitted by the user, call makeGrid()
 $('#sizePicker').submit(function(event) {
-  event.preventDefault();  //prevent  default such as submitting of forms
+  event.preventDefault();  // TODO: prevent  default such as submitting of forms
   
-  height = $('#inputHeight').val(); //select the height value
-  width = $('#inputWeight').val(); //select the width value
+  height = $('#inputHeight').val(); // TODO: select the height value
+  width = $('#inputWeight').val(); // TODO: select the width value
   
-  //call mekeGrid()
+  // TODO: call mekeGrid()
   makeGrid();
 });
 
 function makeGrid() {
-// Your code goes here!
-//Draw grid table
-  for (var i = 1; i <= height; i++) {
-    $('#pixelCanvas').append('<tr id=tableRow' + i + '></tr>'); //assigned unique id with the var i
+// TODO: Draw grid table
+  
+  for (let i = 1; i <= height; i++) {
+    $('#pixelCanvas').append('<tr id=tableRow' + i + '></tr>'); // TODO: create table row and assigned unique id with the var i
 
-    for (var j = 0; j < width; j++) {
-      $('#tableRow' + i).append('<td></td>'); 
+    let j = 0; // TODO: initiliase j for the loop counter
+    while (j < width) {
+      $('#tableRow' + i).append('<td></td>'); // TODO: create table cell
+      j++;
     }
   }
-  //Pick A Color
+  
+  // TODO: Pick A Color
   $('td').click(function pickAColor() {
-    color = $('#colorPicker').val();
+    color = $('#colorPicker').val(); // TODO: pick a color 
 
     if($(this).attr('style'))  {
       $(this).removeAttr('style');
